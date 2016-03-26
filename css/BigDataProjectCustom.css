@@ -4,7 +4,9 @@ body {
 	font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
 	font-size: 16px;
 }
-
+a {
+	color: #339933;
+}
 h1{
 	font-family: Andalus,Garamond,serif;
 	font-size: 48px;
@@ -16,11 +18,6 @@ h3{
 	font-weight: bold;
 	font-align: center;
 }
-
-a {
-	color: #339933;
-}
-
 a:hover {
 	color: #333333;
 }
