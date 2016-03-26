@@ -14,10 +14,11 @@ h3{
 	font-family: Andalus,Garamond,serif;
 	font-size: 24px;
 	font-weight: bold;
+	font-align: center;
 }
 
 a {
-	color: #34576d;
+	color: #339933;
 }
 
 a:hover {
