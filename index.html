@@ -18,7 +18,7 @@
     <link href="css/3-col-portfolio.css" rel="stylesheet">
     
     <!-- Scott's custom CSS -->
-    <link href="css/ScottCustom.css" rel="stylesheet">
+    <link href="css/BigDataProjectCustom.css" rel="stylesheet">
 
 </head>
 
@@ -35,7 +35,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Our Data Visualizaton Project</a>
+                <a class="navbar-brand" href="#">Our Data<br>Visualizaton Project</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -71,41 +71,42 @@
 
         <!-- Projects Row -->
         <div class="row">
-            <div class="col-md-4 portfolio-item">
+		    <div class="col-md-8 portfolio-item">
                 <a href="#">
-                    <img class="img-responsive" src="images/Riyadh-skyline-at-night.jpg" alt="It Never Sleeps">
+                    <img class="img-responsive" src="images/night_traffic.jpg" alt="image courtesy flickr/habeebclicks">
                 </a>
-                <h3>
-                    <a href="#">The City of Riyadh</a>
-                </h3>
-                <p>Riyadh is the capital and largest city in Saudi Arabia, with a population of over 7.3 million.</p>
             </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/cat.jpg" alt="">
-                </a>
+			<div class="col-md-4 portfolio-item">
                 <h3>
-                    <a href="#">Grumpy Cat</a>
+                    <a href="#">The City</a>
                 </h3>
-                <p>This is what we look like after eight straight hours of coding.</p>
+                <p>Riyadh is the capital and largest city in Saudi Arabia, with a population of over 7.3 million. Residents are  largely Saudi, although there is also a significant contingent of foreign workers. The government plans a new transit system, so we are looking at traffic patterns throughout the city.</p>
             </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/mit.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="#">MIT</a>
-                </h3>
-                <p>This is MIT, where we learn design, planning, coding and all kinds of other things.</p>
-            </div>
-        </div>
+		</div>
         <!-- /.row -->
-
-		<div>
+		
+		<div class="row">
+            <div class="col-md-4 portfolio-item vcenter">
+                <h3>
+                    <a href="#">The Idea</a>
+                </h3>
+                <p>We're using python code to grab large datasets from Twitter. By collecting publicly accessible tweet times, locations, and content, we can map social media activity within the city, watch it evolve over time, and learn what topics people are talking about.</p>
+				<p>We expect to find dips in activity around prayer times, which our visualization should make clear. We are also curious to uncover any geographic or temporal patterns to tweets with religious content, or other categories. Our visualization concept is inspired by <a href="precedents.html">this visualization of spending categories</a>, where data points appear and disappear in time, with each color matching up to a category.</p>
+				<p>Finally, if we have time: since we have also access to CDR flow data, we would like to visualize those movement patterns over time.</p>
+            </div>
+            <div class="col-md-8 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/Congestion.jpg" alt="courtesy Carlos Sandoval" href="data.html">
+                </a>
+            </div>			
+		</div>
+		<!-- /.row -->
+		
+		<div class="row">
 			<h3>
                 <a href="#">Putting Tweets on the Map</a>
                 </h3>
-                <p>Here is a sample of tweets collected over a few minutes at just after midnight Saudi time. Hover for timestamps, click to see the tweet.</p>
+                <p>Just as a demonstration, here is a sample of tweets collected through a python script. They were collected over several minutes at just after midnight Saudi time (hover for timestamps, click to see the tweet). Our final product will show activity snapshots like this, in a time-lapse series.</p>
 			<iframe width="100%" height="520" frameborder="0" src="https://scottmar.cartodb.com/viz/f7e4025e-efbe-11e5-b5ba-0ecfd53eb7d3/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
 			</iframe>
 		</div>
