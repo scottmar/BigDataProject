@@ -35,7 +35,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Our Data<br>Visualizaton Project</a>
+                <a class="navbar-brand" href="#">Visualizing Riyadh</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -47,9 +47,9 @@
                         <a href="data.html">Data</a>
                     </li>
 					<li>
-						<a href="MidtermPresentation.pdf" target="_blank">Our Midterm<br>Presentation</a>
+						<a href="MidtermPresentation.pdf" target="_blank">Midterm Presentation</a>
                     <li>
-                        <a href="contact.html">Contact Us</a>
+                        <a href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -64,7 +64,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Visualizing Riyadh
+                <h1 class="page-header">Visualizing Riyadh<br>
                     <small>Conversations and Movement</small>
                 </h1>
             </div>
@@ -82,25 +82,27 @@
                 <h3>
                 The City
                 </h3>
-                <p>Riyadh is the capital and largest city in Saudi Arabia, with a population of over 7.3 million. Residents are  largely Saudi, although there is also a significant contingent of foreign workers. The government plans a new transit system, so we are looking at traffic patterns throughout the city.</p>
+                <p>Riyadh is the capital and largest city in Saudi Arabia, with a population of over 7.3 million. Residents are largely Saudi, although there is also a significant contingent of foreign workers. Further, Saudi Arabia's strong Islamic culture makes religion an integral part of the city. Current plans for a new transit system require that the trends and forecasts of Riyadh's transportation issues be analyzed and visualized for a deeper understanding of their impacts.</p>
             </div>
 		</div>
         <!-- /.row -->
 		
 		<div class="row">
+            <div class="col-md-8 portfolio-item vcenter">
+                <a href="#">
+                    <img class="img-responsive" src="images/Congestion.jpg" alt="courtesy Carlos Sandoval" href="data.html">
+                </a>
+            </div>
             <div class="col-md-4 portfolio-item vcenter">
                 <h3>
                 The Idea
                 </h3>
-                <p>We're using python code to grab large datasets from Twitter. By collecting publicly accessible tweet times, locations, and content, we can map social media activity within the city, watch it evolve over time, and learn what topics people are talking about.</p>
-				<p>We expect to find dips in activity around prayer times, which our visualization should make clear. We are also curious to uncover any geographic or temporal patterns to tweets with religious content, or other categories. Our visualization concept is inspired by <a href="precedents.html">this visualization of spending categories</a>, where data points appear and disappear in time, with each color matching up to a category.</p>
-				<p>Finally, if we have time: since we have also access to CDR flow data, we would like to visualize those movement patterns over time.</p>
+                <p>How do the ways people talk about a place affect the ways they move around that place? Using the previously collected Twitter data (including publicly accessible tweet times, locations, and content) we can map social media activity within the city, watch it evolve over time, and learn what topics people are talking about in certain places. This, in turn, can help us analyze the impacts of observable conversation trends (like prayer or food) on the transportation network.</p>
+				<p>Currently, we are most focused on observing prayer-related tweets as we expect to find strong trends in activity around prayer times (increased social media use directly before prayer times coupled with lulls in conversation during prayers). We are also curious to uncover any geographic or temporal patterns to tweets with religious content, or other categories. Our visualization concept is inspired by <a href="precedents.html">this visualization of spending categories</a>, where data points appear and disappear in time, with each color matching up to a category.</p>
+				<p>Alternatively, we are considering "binning" tweets into TAZs and illustrating trends as an animated choropleth. While this may be easier to code, we are hesitant to use this approach as it doesn't allow the layering of multiple tweet categories.</p>
+                <p>Finally (time permitting), using the hourly cell tower flows mapped to the nearest intersection, we can use NetworkX to recreate the street network and illustrate flow volumes with street (edge) line thickness, approximating routing using NetworkX's built-in shortest path function. Again, we anticipate prayer times will see markedly different travel patterns.</p>
             </div>
-            <div class="col-md-8 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="images/Congestion.jpg" alt="courtesy Carlos Sandoval" href="data.html">
-                </a>
-            </div>			
+            			
 		</div>
 		<!-- /.row -->
 		
