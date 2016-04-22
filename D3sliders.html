@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scott Margeson - D3 Assignment</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- D3 slider CSS -->
+	<link href="css/d3.slider.css" rel="stylesheet" >
+	
+	<!-- Scott's custom CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+	
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="js/d3.slider.js"></script>
+
+	
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Scott's Big Data</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="choro.html">Choropleths</a>
+                    </li>
+                    <li>
+                        <a href="#">D3 Sliders</a>
+                    </li>
+					<li>
+                        <a href="D3force.html">D3 Force Graph</a>
+                    </li>
+                    <li>
+                        <a href="bar_chart.html">D3 Bar Chart</a>
+                    </li>
+                    <li>
+                        <a href="#">Assignment 8</a>
+                    </li>					
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Experimenting with D3</h1>
+                <p>D3 is a javascript library that is particularly useful for visualizing data. Here are some experiments with incorporating D3 into a webpage.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+		
+		<div class="row">
+			<h2>This interactive slider outputs a number: <span id="slider4text">0</span></h2>
+			<div id="slider4"></div>
+		</div>
+		
+		<div class="row">
+			<h2>And this one lets you choose a category:</h2>
+			<p>Your selection is: <span id="slider12output" style="font-weight:bold">"Cake"</span></p>
+			<div id="slider12"></div>		
+		</div>
+		
+		<div class="row">
+			<h2>Sliders can also change style, such as color:</h2>
+			<div id="slider13output" style="width:50%;height:100px;border:1px solid #000;text-align:center;">This is your color</div>
+			<br>
+			<div id="slider13"></div>		
+		</div>
+		
+		
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- D3 Sliders javascript -->
+	<script>
+
+		d3.select('#slider1').call(d3.slider());
+
+		d3.select('#slider2').call(d3.slider().value( [ 10, 25 ] ));
+
+		d3.select('#slider3').call(d3.slider().axis(true).value( [ 10, 25 ] ).on("slide", function(evt, value) {
+		  d3.select('#slider3textmin').text(value[ 0 ]);
+		  d3.select('#slider3textmax').text(value[ 1 ]);
+		}));
+
+		d3.select('#slider4').call(d3.slider().on("slide", function(evt, value) {
+		  d3.select('#slider4text').text(value);
+		}));
+
+		d3.select('#slider5').call(d3.slider().axis(true));
+
+		var axis = d3.svg.axis().orient("top").ticks(4);
+		d3.select('#slider6').call(d3.slider().axis(axis));
+
+		d3.select('#slider7').call(d3.slider().axis(true).min(2000).max(2100).step(5));
+
+		d3.select('#slider8').call(d3.slider().value(50).orientation("vertical"));
+
+		d3.select('#slider9').call(d3.slider().value( [10, 30] ).orientation("vertical"));
+
+		d3.select('#slider10').call(d3.slider().scale(d3.time.scale().domain([new Date(1984,1,1), new Date(2014,1,1)])).axis(d3.svg.axis()));
+
+		d3.select('#slider11').call(d3.slider().scale(d3.time.scale().domain([new Date(1984,1,1), new Date(2014,1,1)])).axis(d3.svg.axis()).snap(true).value(new Date(2000,1,1)));
+
+		essai = d3.slider().scale(d3.scale.ordinal().domain(["Cake", "Cookies", "Candy", "Chocolate"]).rangePoints([0, 1], 0.5)).axis(d3.svg.axis()).snap(true).value("Cake");
+		d3.select('#slider12').call(essai.on("slide", function(evt, value) {
+			d3.select('#slider12output').text(value);
+		}))
+		
+		essai2 = d3.slider().scale(d3.scale.ordinal().domain(["#762a83", "#af8dc3", "#e7d4e8", "#f7f7f7", "#d9f0d3", "#7fbf7b", "#1b7837"]).rangePoints([0, 1], 0.5)).axis(d3.svg.axis()).snap(true).value("#f7f7f7");
+		d3.select('#slider13').call(essai2.on("slide", function(evt, value) {
+			d3.select('#slider13output').style("background-color",value);
+		}))
+		
+		
+		
+
+	</script>
+
+</body>
+
+</html>
