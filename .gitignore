@@ -5,6 +5,13 @@ twitter_key.pyc
 credentials.py
 credentials.pyc
 
+# big data files #
+jsons-twitter-10-8-15to1-15-16/
+jsons-foursquare2015-10-09/
+
+# notebook auto-saves #
+.ipynb_checkpoints/
+
 
 # Compiled source #
 ###################
